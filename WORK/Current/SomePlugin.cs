@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using Oxide.Core;
 using Oxide.Core.Plugins;
 using Oxide.Game.Rust.Cui;
@@ -24,7 +25,8 @@ namespace Oxide.Plugins
 
         private class Configuration
         {
-
+            [JsonProperty(PropertyName = " ДОБАВИЛ КАКАШЕК ПОКУШАЦ")]
+            public string addPoop;
         }
 
         protected override void LoadConfig()
