@@ -24,7 +24,7 @@ namespace Oxide.Plugins
 
         private class Configuration
         {
-
+            //KAVO BLYAT
         }
 
         protected override void LoadConfig()
