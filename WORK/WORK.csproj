@@ -545,6 +545,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Current\iiii.cs" />
         <Compile Include="Current\SomePlugin.cs" />
         <Compile Include="ETC\hyesos.cs" />
         <Compile Include="ETC\Готовые функции\dlya_npts.cs" />
