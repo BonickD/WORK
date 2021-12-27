@@ -546,6 +546,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Current\SomePlugin.cs" />
+        <Compile Include="ETC\hyesos.cs" />
         <Compile Include="ETC\Готовые функции\dlya_npts.cs" />
         <Compile Include="ETC\Готовые функции\IQFakeActive.cs" />
         <Compile Include="ETC\Готовые функции\Outline.cs" />
