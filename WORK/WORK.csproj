@@ -545,8 +545,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Current\iiii.cs" />
-        <Compile Include="Current\SomePlugin.cs" />
         <Compile Include="ETC\hyesos.cs" />
         <Compile Include="ETC\Готовые функции\dlya_npts.cs" />
         <Compile Include="ETC\Готовые функции\IQFakeActive.cs" />
@@ -571,6 +569,9 @@
         <Compile Include="ETC\Завершенные\TableList.cs" />
         <Compile Include="ETC\Завершенные\TpMenu.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Current" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
