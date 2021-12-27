@@ -24,7 +24,7 @@ namespace Oxide.Plugins
 
         private class Configuration
         {
-            //KAVO BLYAT
+            //NE RYDAISA
         }
 
         protected override void LoadConfig()
