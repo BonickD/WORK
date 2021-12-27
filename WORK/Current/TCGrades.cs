@@ -110,7 +110,7 @@ namespace Oxide.Plugins
         {
             if (player == null || !(container.GetEntity() is BuildingPrivlidge)) return null;
             ShowUI(player);
-            player.ChatMessage("ТЫ ПИДОРА ЗХАХАХАХХАХАВХАХВАХВХАВХА");
+            player.ChatMessage("ТЫ НЕ ПИДОРА ЗХАХАХАХХАХАВХАХВАХВХАВХА");
             return null;
         }
         
@@ -146,10 +146,27 @@ namespace Oxide.Plugins
 
             container.Add(new CuiPanel
             {
-                RectTransform = {AnchorMin = "", AnchorMax = ""},
-                Image = {Color = "0 0 0 0"}
+                RectTransform = {AnchorMin = "0.655 0.0235", AnchorMax = "0.83 0.1355"},
+                Image = {Color = "0.38 0.35 0.33 0.4"}
             }, "Overlay", Layer);
-
+            container.Add(new CuiLabel
+            {
+                RectTransform = {AnchorMin = "0 0.7", AnchorMax = "1 1"},
+                Text =
+                {
+                    Text = "Текущий", Font = "robotocondensed-bold.ttf", FontSize = 12, Align = TextAnchor.MiddleCenter,
+                    Color = "1 1 1 1"
+                }
+            }, Layer);
+            container.Add(new CuiElement
+            {
+                Parent = Layer,
+                Components =
+                {
+                    new CuiRawImageComponent {Png = ImageLibrary.Call<string>("GetImage", "")},
+                    new CuiRectTransformComponent {AnchorMin = "0 0", AnchorMax = "0.4 0.65"}
+                }
+            });
             CuiHelper.DestroyUi(player, Layer);
             CuiHelper.AddUi(player, container);
         }
