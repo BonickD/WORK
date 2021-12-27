@@ -24,7 +24,7 @@ namespace Oxide.Plugins
 
         private class Configuration
         {
-            //NE RYDAISA
+            
         }
 
         protected override void LoadConfig()
@@ -106,10 +106,23 @@ namespace Oxide.Plugins
             SaveData();
         }
 
+        private object CanLootEntity(BasePlayer player, StorageContainer container)
+        {
+            if (player == null || !(container.GetEntity() is BuildingPrivlidge)) return null;
+            ShowUI(player);
+            player.ChatMessage("ТЫ ПИДОРА ЗХАХАХАХХАХАВХАХВАХВХАВХА");
+            return null;
+        }
+        
         private void OnPlayerConnected(BasePlayer player)
         {
             if (player == null || data.ContainsKey(player.userID)) return;
             data.Add(player.userID, new Data());
+        }
+        
+        private void OnLootEntityEnd(BasePlayer player, BaseCombatEntity entity)
+        {
+            CuiHelper.DestroyUi(player, Layer);
         }
 
         #endregion
@@ -127,6 +140,19 @@ namespace Oxide.Plugins
 
         #region UI
 
+        private void ShowUI(BasePlayer player)
+        {
+            var container = new CuiElementContainer();
+
+            container.Add(new CuiPanel
+            {
+                RectTransform = {AnchorMin = "", AnchorMax = ""},
+                Image = {Color = "0 0 0 0"}
+            }, "Overlay", Layer);
+
+            CuiHelper.DestroyUi(player, Layer);
+            CuiHelper.AddUi(player, container);
+        }
 
         #endregion
     }
