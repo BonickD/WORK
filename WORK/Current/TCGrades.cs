@@ -43,29 +43,56 @@ namespace Oxide.Plugins
             container.Add(new CuiPanel
             {
                 RectTransform = {AnchorMin = "0.655 0.0235", AnchorMax = "0.83 0.1355"},
-                Image = {Color = "0.38 0.35 0.33 0.4"}
+                Image = {Color = "0.38 0.35 0.33 0.55"}
             }, "Overlay", Layer);
 
             container.Add(new CuiLabel
             {
-                RectTransform = {AnchorMin = "0 0.7", AnchorMax = "1 1"},
+                RectTransform = {AnchorMin = "0 0.8", AnchorMax = "1 1"},
                 Text =
                 {
-                    Text = "Текущий", Font = "robotocondensed-bold.ttf", FontSize = 12, Align = TextAnchor.MiddleCenter,
-                    Color = "1 1 1 1"
+                    Text = "ТЕКУЩИЙ УРОВЕНЬ ШКАФА", Font = "robotocondensed-bold.ttf", FontSize = 10, Align = TextAnchor.MiddleCenter,
+                    Color = "0.87 0.83 0.79 1"
                 }
             }, Layer);
 
+            container.Add(new CuiPanel
+            {
+                RectTransform = {AnchorMin = "0 0", AnchorMax = "0 0", OffsetMin = "5 5", OffsetMax = "60 60"},
+                Image = {Color = "0.38 0.35 0.33 0.8"}
+            }, Layer, Layer + ".item");
+            
             container.Add(new CuiElement
             {
-                Parent = Layer,
+                Parent = Layer + ".item",
                 Components =
                 {
-                    new CuiRawImageComponent {Png = ImageLibrary.Call<string>("GetImage", "123")},
-                    new CuiRectTransformComponent {AnchorMin = "0 0", AnchorMax = "0.4 0.65"}
+                    new CuiRawImageComponent {Png = ImageLibrary.Call<string>("GetImage", "pickaxe")},
+                    new CuiRectTransformComponent {AnchorMin = "0 0", AnchorMax = "0 0", OffsetMin = "5 5", OffsetMax = "50 50"}
                 }
             });
 
+            container.Add(new CuiLabel
+            {
+                RectTransform = {AnchorMin = "0 0", AnchorMax = "1 0.25"},
+                Text =
+                {
+                    Text = "x1000", Font = "robotocondensed-regular.ttf", FontSize = 10, Align = TextAnchor.LowerRight,
+                    Color = "0.87 0.83 0.79 1"
+                }
+            }, Layer + ".item");
+ 
+            container.Add(new CuiButton
+            {
+                RectTransform = {AnchorMin = "0.2 0.0", AnchorMax = "1 0.8"},
+                Button = {Color = "0 0 0 0"},
+                Text =
+                {
+                    Text = "УЛУЧШИТЬ", Font = "robotocondensed-bold.ttf", FontSize = 16, Align = TextAnchor.MiddleCenter,
+                    Color = "0.87 0.83 0.79 1"
+                }
+            }, Layer);
+            
             CuiHelper.DestroyUi(player, Layer);
             CuiHelper.AddUi(player, container);
         }
